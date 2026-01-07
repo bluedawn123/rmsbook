@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>2-2. 체크아웃</title>
+
+  <!-- 기준 경로 설정 -->
+  <base href="../">
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/include.js" defer></script>
+  <style>
+    /* 체크아웃 프로세스 박스 스타일 (체크인과 동일) */
+    .process-step {
+      background-color: #f3f4f6;
+      border-left: 5px solid #3b82f6;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .process-step h3 {
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      color: #1f2937;
+    }
+
+    .process-step p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .sub-step {
+      margin-left: 20px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+
+  <div data-include="templates/sidebar.html"></div>
+
+  <main class="content">
+    <h1>2-2. 체크아웃</h1>
+    <p>체크아웃은 아래 단계별로 진행됩니다.</p>
+
+    <div class="process-step">
+      <h3>1. 고객 도착</h3>
+      <p>체크아웃을 위해 고객을 맞이합니다.</p>
+    </div>
+
+    <div class="process-step">
+      <h3>2. 예약 확인</h3>
+      <p>객실 번호, 고객 이름, Res 노트를 확인합니다.</p>
+    </div>
+
+    <div class="process-step">
+      <h3>3. ACcomm 확인</h3>
+      <p>ACCOMM 금액이 0이 되어야 체크아웃이 가능합니다.</p>
+      <p class="sub-step">• 만약 0이 아니라면 원인 분석</p>
+      <p class="sub-step">• Invoice 문제 시, ACCOMM 들어가서 취소 후 재생성 후 체크아웃 처리</p>
+    </div>
+
+    <div class="process-step">
+      <h3>4. 체크아웃 완료</h3>
+      <p>모든 체크아웃 절차를 완료하고 객실 상태를 업데이트합니다.</p>
+    </div>
+
+  </main>
+</body>
+</html>
 

@@ -1,0 +1,178 @@
+/* ===== 폰트 & 기본 설정 ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  display: flex;
+  background-color: #f3f4f6; /* 조금 더 밝은 배경 */
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* ===== 사이드바 스타일 ===== */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+  color: #fff;
+  padding: 25px 20px;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+  transition: width 0.3s;
+}
+
+.sidebar-header h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  color: #f9fafb;
+}
+
+.sidebar-header p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 25px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #e5e7eb;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #3b82f6; /* 밝은 파랑 */
+  color: #fff;
+  transform: translateX(3px);
+}
+
+/* ===== 메인 콘텐츠 ===== */
+.content {
+  margin-left: 280px;
+  padding: 50px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ===== 카드 스타일 ===== */
+.welcome-card, .section {
+  background-color: #fff;
+  padding: 30px 35px;
+  border-radius: 15px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.welcome-card h2, .section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #111827;
+}
+
+.welcome-card p, .section p, .section li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4b5563;
+}
+
+/* 코드 블록 스타일 */
+pre {
+  background-color: #f9fafb;
+  padding: 15px 20px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  margin: 20px 0;
+  border-left: 4px solid #3b82f6;
+}
+
+/* ===== 서브 메뉴 스타일 ===== */
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.submenu li {
+  margin-bottom: 8px;
+}
+
+.submenu a {
+  font-size: 0.95em;
+  color: #9ca3af;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.submenu a:hover {
+  color: #fff;
+  background-color: #2563eb;
+  transform: translateX(2px);
+}
+
+/* ===== 클릭 화살표 ===== */
+.has-submenu {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ===== 스크롤바 스타일 ===== */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #6b7280;
+  border-radius: 3px;
+}
+
+/* ===== 반응형 ===== */
+@media screen and (max-width: 900px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .content {
+    margin-left: 240px;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
+}

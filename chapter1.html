@@ -2,30 +2,94 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>1장. 다익스트라 알고리즘</title>
+  <title>1장. RMS</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/include.js" defer></script>
 </head>
 <body>
-  <div class="sidebar">
-    <h2>목차</h2>
-    <ul>
-      <li><a href="index.html">홈</a></li>
-      <li><a href="chapter1.html">1장. 다익스트라 알고리즘</a></li>
-      <li><a href="chapter2.html">2장. 그래프 이론</a></li>
-      <li><a href="chapter3.html">3장. 구현 예제</a></li>
-    </ul>
-  </div>
 
-  <div class="content">
-    <h1>1장. Rms</h1>
-    <p>Ascott Limited가 전 세계 자사 숙소 운영에 도입한 클라우드 기반 부동산/숙박 관리 시스템입니다. RMS는 *Property Management System (PMS)*의 한 종류로, 예약·체크인·요금·분배·보고 등 숙소 운영 전반을 중앙 집중화하는 솔루션이에요.</p>
-    <pre>
-import heapq
+  <div data-include="templates/sidebar.html"></div>
 
-def dijkstra(graph, start):
-    # 코드 예제
-    ...
-    </pre>
-  </div>
+  <main class="content">
+    <h1>1장. RMS란?</h1>
+
+    <section class="section">
+      <h2>RMS 개요</h2>
+      <p>
+        RMS(Property/Reservation Management System)는 호텔, 리조트, serviced apartments 등 숙박업체에서 
+        객실, 예약, 체크인/체크아웃, 재고 관리, 보고서 작성 등 운영 전반을 통합 관리할 수 있는 시스템입니다.
+      </p>
+      <p>
+        현대의 RMS는 대부분 클라우드 기반으로 제공되어, 다수의 지점을 중앙에서 관리하고 실시간 데이터 분석이 가능하며, 
+        외부 예약 플랫폼(OTA, Booking.com, Expedia 등)과 연동할 수 있습니다.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>RMS의 핵심 기능</h2>
+      <ul>
+        <li><strong>예약 관리</strong>: 실시간 객실 예약, 예약 변경/취소, OTA 연동</li>
+        <li><strong>체크인/체크아웃 관리</strong>: 고객 정보 등록, 신용카드 인증, 영수증 발행</li>
+        <li><strong>객실 관리</strong>: 객실 상태 확인, 청소 상태 관리, 점검 기록</li>
+        <li><strong>보고서 및 분석</strong>: 객실 점유율, 매출, 예약 트렌드, KPI 관리</li>
+        <li><strong>통합 운영</strong>: 다중 호텔/지점 관리, 직원 권한 설정, 회계 연동</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>RMS 구조 예시</h2>
+      <p>기본적인 RMS 구조는 다음과 같이 나눌 수 있습니다:</p>
+      <ul>
+        <li><strong>프론트 오피스 (Front Office)</strong>: 예약, 체크인/체크아웃, 고객 서비스</li>
+        <li><strong>하우스키핑 (Housekeeping)</strong>: 객실 상태, 청소 스케줄 관리</li>
+        <li><strong>백 오피스 (Back Office)</strong>: 보고서, 매출 분석, 재고 관리</li>
+        <li><strong>통합 인터페이스</strong>: 외부 OTA, 결제 게이트웨이, 회계 시스템과 연결</li>
+      </ul>
+      <pre>
+# RMS에서 객실 점유율 계산 예제 (Python)
+rooms = {
+    "101": "booked",
+    "102": "available",
+    "103": "booked",
+    "104": "available"
+}
+
+total = len(rooms)
+booked = sum(1 for status in rooms.values() if status == "booked")
+occupancy_rate = (booked / total) * 100
+print(f"객실 점유율: {occupancy_rate:.1f}%")
+      </pre>
+    </section>
+
+    <section class="section">
+      <h2>RMS 도입 장점</h2>
+      <ol>
+        <li>운영 효율 향상: 중복 업무 감소, 직원 업무 효율 증가</li>
+        <li>실시간 데이터 관리: 객실 점유율, 예약 상황, 매출 데이터를 즉시 확인</li>
+        <li>수익 최적화: 가격 조정, 예약 트렌드 분석, 수익 관리(RMS + Revenue Management)</li>
+        <li>고객 경험 향상: 신속한 체크인/체크아웃, 맞춤형 서비스 제공</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>RMS 구현 시 고려 사항</h2>
+      <ul>
+        <li>데이터 보안: 고객 개인정보 보호, 결제 정보 암호화</li>
+        <li>OTA 연동 호환성: 다양한 예약 플랫폼과 안정적 연동</li>
+        <li>유연한 보고서 생성: KPI, 매출, 예약 추이 등 커스터마이징 가능</li>
+        <li>사용자 권한 관리: 관리자, 직원 등 역할별 접근 권한 설정</li>
+        <li>확장성: 지점 추가, 새로운 기능 추가 용이</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>요약</h2>
+      <p>
+        RMS는 단순 예약 관리 시스템을 넘어, 숙박업체 운영의 모든 영역을 통합 관리하고, 
+        실시간 데이터 분석과 외부 연동을 통해 수익 최적화와 고객 만족도를 높이는 핵심 도구입니다.
+      </p>
+    </section>
+
+  </main>
 </body>
 </html>

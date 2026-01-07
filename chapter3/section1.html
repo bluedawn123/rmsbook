@@ -10,12 +10,12 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/include.js" defer></script>
   <style>
-    /* 체크인 프로세스 박스 스타일 */
+    /* 프로세스 박스 스타일 (기존 서식 유지) */
     .process-step {
       background-color: #f3f4f6;
       border-left: 5px solid #3b82f6;
       padding: 15px 20px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
@@ -27,15 +27,17 @@
     }
 
     .process-step p {
-      margin: 0;
+      margin-bottom: 10px;
       font-size: 0.95rem;
       color: #4b5563;
     }
 
-    .sub-step {
-      margin-left: 20px;
-      font-size: 0.9rem;
-      color: #6b7280;
+    .process-image {
+      width: 100%;
+      max-width: 900px;
+      margin-top: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     }
   </style>
 </head>
@@ -44,10 +46,46 @@
   <div data-include="templates/sidebar.html"></div>
 
   <main class="content">
-    <h1>3-1. 예약생성</h1>
-    <p>예약 생성은 아래 단계별로 진행됩니다.</p>
+    <h1>3-1. 예약 생성</h1>
+    <p>신규 예약 생성은 아래 단계별로 진행됩니다.</p>
 
+    <div class="process-step">
+      <h3>1. 예약 생성 화면 진입</h3>
+      <p>메인 화면에서 Reservation 생성 메뉴로 이동합니다.</p>
+      <img src="images/chapter3/mr1.png" alt="예약 생성 화면 진입" class="process-image">
+    </div>
+
+    <div class="process-step">
+      <h3>2. 투숙 날짜 선택</h3>
+      <p>체크인 및 체크아웃 날짜를 선택합니다.</p>
+      <img src="images/chapter3/mr2.png" alt="투숙 날짜 선택" class="process-image">
+    </div>
+
+    <div class="process-step">
+      <h3>3. 객실 타입 및 요금 확인</h3>
+      <p>이용 가능한 객실 타입과 요금을 확인합니다.</p>
+      <img src="images/chapter3/mr3.png" alt="객실 타입 및 요금 확인" class="process-image">
+    </div>
+
+    <div class="process-step">
+      <h3>4. 고객 정보 입력</h3>
+      <p>고객 성함 및 연락처 등 필수 정보를 입력합니다.</p>
+      <img src="images/chapter3/mr4.png" alt="고객 정보 입력" class="process-image">
+    </div>
+
+    <div class="process-step">
+      <h3>5. 결제 정보 확인</h3>
+      <p>결제 방식 및 금액을 확인합니다.</p>
+      <img src="images/chapter3/mr5.png" alt="결제 정보 확인" class="process-image">
+    </div>
+
+    <div class="process-step">
+      <h3>6. 예약 생성 완료</h3>
+      <p>모든 정보를 확인한 후 예약을 생성합니다.</p>
+      <img src="images/chapter3/mr6.png" alt="예약 생성 완료" class="process-image">
+    </div>
 
   </main>
 </body>
 </html>
+
